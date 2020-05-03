@@ -1,10 +1,16 @@
+
 const queries = require("../config/orm")
 
+var burger = {
+  // The variables cols and vals are arrays.
+  getBurgers: async function(){
+    let burgers= await queries.selectAll
+    //console.log(burgers);
+    return burgers;
+  }
 
 
-queries.selectAll;
-queries.insertburger;
-queries.updateburger;
+};
 
-
-//module.exports = Product;
+// Export the database functions for the controller (catsController.js).
+module.exports = burger;
