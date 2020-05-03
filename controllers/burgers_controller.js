@@ -7,7 +7,19 @@ module.exports = function(app) {
       res.render('../views/index.handlebars', {
       burgers: await burgers.getBurgers()
       })
-      console.log(burgers);
+    }
+    catch(err) {
+      throw err;
+    }
+  })
+
+  app.post("/api/burgers", async (req, res) => {
+    try {
+      console.log(Object.keys(req.body)[0]);
+      let temp = await burgers.insertBurger(Object.keys(req.body)[0])
+
+
+      res.render('../views/index.handlebars')
     }
     catch(err) {
       throw err;

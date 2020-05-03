@@ -2,15 +2,16 @@ let connection = require('./connection')
 
 async function selectAll(){
     let burgers = await connection.query(`SELECT * FROM burgers`)
-    //console.log(burgers);
     return burgers;
 }
 
-// async function insertOne(burger){
-//     let insertburger = await connection.query(`INSERT INTO burgers (burger_name, devoured)
-//     VALUES (${burger}, false)`)
-//     console.log(`Burger Inserted`);
-// }
+async function insertOne(burger){
+    console.log(`hitting ORM`);
+     var insertburger = await connection.query(`INSERT INTO burgers (burger_name, devoured)
+    VALUES (${burger}, false)`)
+    console.log(`Burger Inserted`);
+
+}
 
 // async function updateOne(id){
 //     let updateburger = await connection.query(`
@@ -23,6 +24,12 @@ async function selectAll(){
 
 module.exports  = {
     selectAll: selectAll(),
-    //insertburger: insertOne(),
+    insertOne: async function (burger){
+        console.log(`hitting ORM`);
+         var insertburger = await connection.query(`INSERT INTO burgers (burger_name, devoured)
+        VALUES ('${burger}', false)`)
+        console.log(`Burger Inserted`);
+    
+    }
     //updateburger: updateOne()
 }

@@ -5,8 +5,12 @@ var burger = {
   // The variables cols and vals are arrays.
   getBurgers: async function(){
     let burgers= await queries.selectAll
-    //console.log(burgers);
     return burgers;
+  },
+  insertBurger: async function(burger){
+    var burgers= await queries.insertOne(burger)
+    return burgers;
+
   }
 
 
