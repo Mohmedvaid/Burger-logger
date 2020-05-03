@@ -5,14 +5,6 @@ async function selectAll(){
     return burgers;
 }
 
-// async function updateOne(id){
-//     let updateburger = await connection.query(`
-//     UPDATE burgers
-//     SET devoured = true
-//     WHERE id = ${id};
-//     `)
-//     console.log(`Burger Updates`);
-// }
 
 module.exports  = {
     selectAll: selectAll(),
@@ -22,6 +14,13 @@ module.exports  = {
                  VALUES ('${burger}', false)`)
                  console.log(`Burger Inserted`);
     
-    }
-    //updateburger: updateOne()
+    },
+    updateBurger: async function (id){
+                let updateburger = await connection.query(`
+                UPDATE burgers
+                SET devoured = true
+                WHERE id = ${id};
+                `)
+                console.log(`Burger Updates`);
+}
 }

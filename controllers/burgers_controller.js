@@ -31,7 +31,15 @@ module.exports = function(app) {
      }
   })
 
-  app.put('/api/burger', function (req, res) {
+  app.put('/api/burgers/:id', async function (req, res) {
+    try {
+      console.log(req.params.id);
+      let temp = await burgers.updateBurger(req.params.id)
+      
+    } catch (err) {
+      throw err
+    }
+
     res.send('Got a PUT request at /user')
   })
 

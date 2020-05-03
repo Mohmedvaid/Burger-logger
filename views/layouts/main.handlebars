@@ -34,7 +34,7 @@
     margin: 2rem;
   justify-content: space-between;
   }
-  .btns{
+  .devoure-btn{
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
@@ -65,6 +65,13 @@
         location.reload();
     });
 
+    $(".dev-btn").click(function(){
+        event.preventDefault();
+        id = this.id;
+        console.log(id)
+        devourBurger(id)
+    });
+
     let addBurger = function(burger){
         return $.ajax({
         url: "/api/burgers",
@@ -72,6 +79,14 @@
         method: "POST"
       });
     }
+
+    let devourBurger = function(id){
+      return $.ajax({
+      url: "/api/burgers/" + id,
+      method: "PUT"
+    });
+    }
+
 
 
   });
