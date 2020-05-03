@@ -10,7 +10,7 @@
 	<style>
 		html, body {
     	height:100%;
-} 
+  } 
     	body {
  		background-image: url('https://www.corporatecomplianceinsights.com/wp-content/uploads/2015/09/burger.jpg');
  		background-color: #e22020;
@@ -23,21 +23,31 @@
     margin: 20px;
     background-color: white;
   }
-  .burgers{
+  .main-burgers{
     display: flex;
     margin: auto;
     align-items: center;
     justify-content: center;
   }
+  .each-burger{
+    display: flex;
+    margin: 2rem;
+  justify-content: space-between;
+  }
+  .btns{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
 </style>
-<link rel="stylesheet" href="/public/assets/styles.css">
+{{!-- <link rel="stylesheet" href="/public/assets/styles.css"> --}}
 
     <title>Burgers</title>
   </head>
   <body>
 	{{{body}}}
 
-	<script type="text/javascript" src="/public/assets/index.js"></script>
+	{{!-- <script type="text/javascript" src="/public/assets/index.js"></script> --}}
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -49,9 +59,10 @@
 		$(document).ready(function(){
    	 $(".submit-btn").click(function(){
         event.preventDefault();
-     let burger = $(".form-control").val();
-     console.log(burger);
-     addBurger(burger)
+        let burger = $(".form-control").val();
+        console.log(burger);
+        addBurger(burger)
+        location.reload();
     });
 
     let addBurger = function(burger){

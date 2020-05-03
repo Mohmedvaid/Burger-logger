@@ -20,12 +20,19 @@ module.exports = function(app) {
       console.log(Object.keys(req.body)[0]);
       let temp = await burgers.insertBurger(Object.keys(req.body)[0])
 
-
-      res.render('../views/index.handlebars')
-    }
-    catch(err) {
+       temp = await burgers.getBurgers()
+        res.render('../views/index.handlebars', {
+        burgers: temp,
+        devoured: temp
+        })
+     }
+      catch(err) {
       throw err;
-    }
+     }
+  })
+
+  app.put('/api/burger', function (req, res) {
+    res.send('Got a PUT request at /user')
   })
 
 

@@ -10,10 +10,7 @@ var burger = {
   insertBurger: async function(burger){
     var burgers= await queries.insertOne(burger)
     return burgers;
-
   }
-
-
 };
 
 // Export the database functions for the controller (catsController.js).
