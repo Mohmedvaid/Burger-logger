@@ -4,8 +4,10 @@ const burgers = require('../models/burger')
 module.exports = function(app) {
   app.get("/index", async (req, res) => {
     try {
+      let temp = await burgers.getBurgers()
       res.render('../views/index.handlebars', {
-      burgers: await burgers.getBurgers()
+      burgers: temp,
+      devoured: temp
       })
     }
     catch(err) {

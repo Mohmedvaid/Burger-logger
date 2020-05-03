@@ -5,14 +5,6 @@ async function selectAll(){
     return burgers;
 }
 
-async function insertOne(burger){
-    console.log(`hitting ORM`);
-     var insertburger = await connection.query(`INSERT INTO burgers (burger_name, devoured)
-    VALUES (${burger}, false)`)
-    console.log(`Burger Inserted`);
-
-}
-
 // async function updateOne(id){
 //     let updateburger = await connection.query(`
 //     UPDATE burgers
@@ -25,10 +17,10 @@ async function insertOne(burger){
 module.exports  = {
     selectAll: selectAll(),
     insertOne: async function (burger){
-        console.log(`hitting ORM`);
-         var insertburger = await connection.query(`INSERT INTO burgers (burger_name, devoured)
-        VALUES ('${burger}', false)`)
-        console.log(`Burger Inserted`);
+                 console.log(`hitting ORM`);
+                 var insertburger = await connection.query(`INSERT INTO burgers (burger_name, devoured)
+                 VALUES ('${burger}', false)`)
+                 console.log(`Burger Inserted`);
     
     }
     //updateburger: updateOne()
