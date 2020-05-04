@@ -7,12 +7,16 @@ async function selectAll(){
 
 
 module.exports  = {
-    selectAll: selectAll(),
+    selectAll: async function (){
+        let burgers = await connection.query(`SELECT * FROM burgers`)
+        return burgers;
+    },
     insertOne: async function (burger){
                  console.log(`hitting ORM`);
-                 var insertburger = await connection.query(`INSERT INTO burgers (burger_name, devoured)
+                 var insertburger= await connection.query(`INSERT INTO burgers (burger_name, devoured)
                  VALUES ('${burger}', false)`)
                  console.log(`Burger Inserted`);
+                return insertburger;
     
     },
     updateBurger: async function (id){
@@ -22,5 +26,11 @@ module.exports  = {
                 WHERE id = ${id};
                 `)
                 console.log(`Burger Updates`);
-}
+    },
+    getBurgerById: async function(id){
+        let burger = await connection.query(`
+            Select burger_name from burgers where id = ${id};
+        `)
+        return burger;
+    }
 }

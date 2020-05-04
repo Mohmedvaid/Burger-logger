@@ -17,7 +17,7 @@
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
 	}
-  .saved-burgers{
+  .saved-burgers, .devoured{
     color: #585858;
     border: 1.1rem solid #ff8080;
     margin: 20px;
@@ -47,7 +47,7 @@
   <body>
 	{{{body}}}
 
-	{{!-- <script type="text/javascript" src="/public/assets/index.js"></script> --}}
+	<script type="text/javascript" src="/public/assets/index.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -57,10 +57,11 @@
 
 	<script>
 		$(document).ready(function(){
+
    	 $(".submit-btn").click(function(){
         event.preventDefault();
         let burger = $(".form-control").val();
-        console.log(burger);
+
         addBurger(burger)
         location.reload();
     });
@@ -86,6 +87,22 @@
       method: "PUT"
     });
     }
+
+    {{!-- let renderBurgers = function(res){
+      let block;
+      console.log(res[0]);
+      res.forEach(e => {
+        if(e.devoured){
+          block = `<div class="each-burger">
+            <h3>${e.burger_name}</h3>
+            <button type="button" id="${e.id}" class="dev-btn btn btn-success">Devoure</button>
+          </div>`
+          $( ".saved-burgers" ).append(block);
+        }
+
+    
+  });
+    } --}}
 
 
 
