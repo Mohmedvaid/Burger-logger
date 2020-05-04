@@ -4,7 +4,10 @@ const exphbs = require("express-handlebars")
 const app = express()
 const PORT = process.env.PORT || 8080
 
-app.use(express.static("public"))
+ app.use(express.static("public"))
+
+
+
 // Set Handlebars as the default templating engine.
 app.engine("handlebars", exphbs({ defaultLayout: "main" }))
 app.set("view engine", "handlebars");
@@ -14,8 +17,6 @@ app.set("view engine", "handlebars");
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-// Static directory
-app.use(express.static("public"))
 
 // Controllers (route handling)
 require("../burger/controllers/burgers_controller")(app)

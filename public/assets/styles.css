@@ -1,3 +1,38 @@
-.saved-burgers{
-    color: white;
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-image: url('https://www.corporatecomplianceinsights.com/wp-content/uploads/2015/09/burger.jpg');
+    background-color: #e22020;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.saved-burgers,
+.devoured-burgers {
+    color: #585858;
+    border: 1.1rem solid #ff8080;
+    margin: 20px;
+    background-color: white;
+}
+
+.main-burgers {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.each-burger {
+    display: flex;
+    margin: 2rem;
+    justify-content: space-between;
+}
+
+.devoure-btn {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
 }

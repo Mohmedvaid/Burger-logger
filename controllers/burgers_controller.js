@@ -34,14 +34,6 @@ module.exports = function(app) {
      }
   })
 
-//   app.post('/employees', function (req, res) {
-//     var postData  = req.body;
-//     connection.query('INSERT INTO employee SET ?', postData, function (error, results, fields) {
-//      if (error) throw error;
-//      res.end(JSON.stringify(results));
-//    });
-//  });
-
   app.put('/api/burgers/:id', async function (req, res) {
     try {
       console.log(req.params.id);
@@ -54,14 +46,4 @@ module.exports = function(app) {
     res.send('Devoured success')
   })
 
-
-  // app.get("/products/:id", async (req, res) => {
-  //   try {
-   
-  //     res.render('product/singleproduct', { ...product.dataValues })
-  //   }
-  //   catch(err) {
-  //     throw err;
-  //   }
-  // })
 }
