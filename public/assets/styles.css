@@ -1,19 +1,19 @@
-html,
+
 body {
-    height: 100%;
-}
+    margin-bottom: 7rem;
+} 
 
 body {
     background-image: url('https://www.corporatecomplianceinsights.com/wp-content/uploads/2015/09/burger.jpg');
     background-color: white;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size:     cover; 
 }
 
 .saved-burgers,
 .devoured-burgers {
     color: #585858;
-    border: 1.1rem solid #ff8080;
+    border: 0.3rem solid #ff8080;
     margin: 20px;
     background-color: white;
 }
@@ -45,6 +45,7 @@ h1 {
 }
 h3{
     font-size: 1.23rem;
+    margin: auto;
 }
 
 .main-form {
