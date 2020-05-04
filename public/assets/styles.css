@@ -5,7 +5,7 @@ body {
 
 body {
     background-image: url('https://www.corporatecomplianceinsights.com/wp-content/uploads/2015/09/burger.jpg');
-    background-color: #e22020;
+    background-color: white;
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -35,4 +35,26 @@ body {
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+    margin-left: 2rem;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-top:40px;
+}
+h3{
+    font-size: 1.23rem;
+}
+
+.main-form {
+    text-align: center;
+    color: white;
+    width: 25rem;
+    margin: auto;
+}
+
+.form-group{
+    width: 30rem;
+
 }
