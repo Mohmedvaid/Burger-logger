@@ -19,7 +19,7 @@ app.use(express.json())
 
 
 // Controllers (route handling)
-require("./burger/controllers/burgers_controller.js")(app)
+require("./controllers/burgers_controller")(app)
 
 //app listening
 app.listen(PORT, function() {
