@@ -3,12 +3,13 @@ const burgers = require('../models/burger')
 
 module.exports = function(app) {
 
-
+//home
   app.get("/", async (req, res) => {
     try {
-      console.log(`/ rout was hit`);
+      //get everything from the database
       let temp = await burgers.getBurgers()
       console.log(temp);
+      //render the response in the index.handlebars (eventually to main.handlebars)
       res.render('../views/index.handlebars', {
       burgers: temp,
       devoured: temp
@@ -20,13 +21,12 @@ module.exports = function(app) {
 
   })
 
+  //post the data to the database
   app.post("/api/burgers", async (req, res) => {
     try {
-      console.log(Object.keys(req.body)[0]);
+      
       let temp;
       temp = await burgers.insertBurger(Object.keys(req.body)[0])
-      console.log(temp.insertId);
-      //temp.insertId
       res.send(temp)
      }
       catch(err) {
@@ -34,6 +34,7 @@ module.exports = function(app) {
      }
   })
 
+  //update the burger from False (not devoured) to True (devoured)
   app.put('/api/burgers/:id', async function (req, res) {
     try {
       console.log(req.params.id);
