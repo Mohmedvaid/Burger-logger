@@ -21,6 +21,7 @@ app.use(express.json())
 // Controllers (route handling)
 require("../burger/controllers/burgers_controller")(app)
 
+//app listening
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT)
 })
